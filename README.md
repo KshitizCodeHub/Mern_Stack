@@ -66,4 +66,4 @@ Bootstrap tasks focus on **responsive design and UI components**. Concepts cover
 ### **Step 1: Clone the Repository**  
 To get a copy of this repository on your local machine, run:  
 ```sh
-git clone [https://github.com/KshitizCodeHub/Mern_Stack/tree/main.git](https://github.com/KshitizCodeHub/Mern_Stack.git)
+git clone https://github.com/KshitizCodeHub/Mern_Stack.git
