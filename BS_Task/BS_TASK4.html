@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material Cards</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .card {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            filter: brightness(1.3);
+            transition: filter 0.3s ease-in-out;
+        }
+
+        .card:hover img {
+            filter: brightness(1.5);
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            z-index: 1;
+        }
+
+        .card-body {
+            text-align: center;
+            background: white;
+            padding: 15px;
+        }
+
+        .card-footer {
+            background: white;
+            text-align: center;
+            padding: 10px;
+            border-top: none;
+        }
+
+        .card-footer a {
+            text-decoration: none;
+            color: #d48806;
+            font-weight: bold;
+            margin: 0 5px;
+            transition: color 0.3s;
+        }
+
+        .card-footer a:hover {
+            color: #b36b00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-overlay">MATERIAL CARDS</div>
+                    <img src="https://via.placeholder.com/400x300/87CEEB/000000?text=Mountains" alt="Nature">
+                    <div class="card-body">
+                        <p>Cards for display in portfolio style material design by Google.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#">LINK</a> <a href="#">LINK</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-overlay">MATERIAL CARDS</div>
+                    <img src="https://via.placeholder.com/400x300/4682B4/FFFFFF?text=Ocean" alt="Ocean">
+                    <div class="card-body">
+                        <p>Cards for display in portfolio style material design by Google.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#">LINK</a> <a href="#">LINK</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-overlay">MATERIAL CARDS</div>
+                    <img src="https://via.placeholder.com/400x300/FFA07A/000000?text=Sunset" alt="Sunset">
+                    <div class="card-body">
+                        <p>Cards for display in portfolio style material design by Google.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#">LINK</a> <a href="#">LINK</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-overlay">MATERIAL CARDS</div>
+                    <img src="https://via.placeholder.com/400x300/228B22/FFFFFF?text=Forest" alt="Forest">
+                    <div class="card-body">
+                        <p>Cards for display in portfolio style material design by Google.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#">LINK</a> <a href="#">LINK</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

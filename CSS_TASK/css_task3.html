@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-3 | Modern Table Design</title>
+    <style>
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Container styling */
+        .container {
+            width: 85%;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        /* Title bar */
+        .task-header {
+            background: linear-gradient(to right, #3F51B5, #673AB7); /* Blue to Purple */
+            color: white;
+            padding: 15px;
+            font-size: 22px;
+            text-align: center;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        th, td {
+            padding: 14px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Header row */
+        th {
+            background: linear-gradient(to right, #5C6BC0, #7E57C2); /* Blue-Purple Gradient */
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* Alternating row colors */
+        tr:nth-child(odd) {
+            background-color: #E3F2FD; /* Soft Blue */
+        }
+
+        tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+
+        /* Hover effect */
+        tr:hover {
+            background-color: #EDE7F6; /* Light Lavender */
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 600px) {
+            table, th, td {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="task-header">Task-3: Modern Table with Indian Names</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Company</th>
+                    <th>Contact</th>
+                    <th>Country</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tata Industries</td>
+                    <td>Rohan Iyer</td>
+                    <td>India</td>
+                </tr>
+                <tr>
+                    <td>Reliance Ltd.</td>
+                    <td>Priya Mehta</td>
+                    <td>India</td>
+                </tr>
+                <tr>
+                    <td>Infosys Technologies</td>
+                    <td>Arjun Sharma</td>
+                    <td>India</td>
+                </tr>
+                <tr>
+                    <td>HDFC Bank</td>
+                    <td>Sneha Patil</td>
+                    <td>India</td>
+                </tr>
+                <tr>
+                    <td>Mahindra Group</td>
+                    <td>Amit Verma</td>
+                    <td>India</td>
+                </tr>
+                <tr>
+                    <td>Wipro Ltd.</td>
+                    <td>Neha Kapoor</td>
+                    <td>India</td>
+                </tr>
+                <tr>
+                    <td>Bajaj Auto</td>
+                    <td>Rahul Choudhary</td>
+                    <td>India</td>
+                </tr>
+                <tr>
+                    <td>Sundaram Finance</td>
+                    <td>Vikas Rao</td>
+                    <td>India</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

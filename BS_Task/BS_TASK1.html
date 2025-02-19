@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethnus Layout - Fixed</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Header Styling */
+        .header {
+            background-color: #00BCD4;
+            color: black;
+            text-align: center;
+            padding: 10px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: #9E9E9E;
+            padding: 0;
+        }
+        
+        .navbar-nav {
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .navbar-nav .nav-item {
+            padding: 8px 15px;
+        }
+
+        .nav-link {
+            color: white !important;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            background-color: #616161;
+            color: white;
+            padding: 15px;
+            height: calc(100vh - 80px); /* Adjust height */
+        }
+
+        /* Container Layout */
+        .content {
+            padding: 20px;
+            text-align: center;
+            background-color: #F5F5F5;
+            height: calc(100vh - 80px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">Ethnus Layout</div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#">HOME</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">MENU</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">ABOUT</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">CONTACT</a></li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#">SIGNUP</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">LOGIN</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Layout Container -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10 content">Write your content here</div>
+            <div class="col-md-2 sidebar">This is</div>
+        </div>
+    </div>
+</body>
+</html>

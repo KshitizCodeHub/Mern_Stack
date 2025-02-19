@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Task 1</title>
+    <style>
+        /* Reset Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Main Container */
+        .container {
+            width: 90%;
+            margin: auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Title Styling */
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* Task Section Header */
+        .task-header {
+            background: #2d4b1d;
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+            text-align: left;
+            width: 100%;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            border: 2px solid #4a9d9d;
+            padding: 10px;
+            text-align: left;
+            transition: background 0.3s ease-in-out;
+        }
+
+        th {
+            background: #2d4b1d;
+            color: white;
+            text-align: center;
+        }
+
+        td {
+            background: #c9e6e6;
+        }
+
+        /* Hover Effect for Table Rows */
+        tr:hover td {
+            background: #91d6d6;
+            transition: background 0.3s ease-in-out;
+        }
+
+        /* Shape Grid */
+        .shape-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .shape {
+            width: 60px;
+            height: 40px;
+            border: 2px solid #6aa84f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .oval {
+            border-radius: 50%;
+            width: 80px;
+            height: 50px;
+        }
+
+        /* Hover Effect for Shapes */
+        .shape:hover {
+            background: #6aa84f;
+            transform: scale(1.1);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Title Section -->
+        <div class="title">CSS Task 1</div>
+
+        <!-- Task-1 Section -->
+        <div class="task-header">Task-1</div>
+
+        <!-- Table -->
+        <table>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Age</th>
+            </tr>
+            <tr>
+                <td>Kshitiz</td>
+                <td>Srivastava</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td>Eve</td>
+                <td>Jackson</td>
+                <td>94</td>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>80</td>
+            </tr>
+        </table>
+
+        <!-- Shapes Grid -->
+        <div class="shape-container">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape oval"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+
+    </div>
+
+</body>
+</html>

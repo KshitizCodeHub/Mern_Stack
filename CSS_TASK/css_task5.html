@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Page | Task-5</title>
+    <style>
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Page background */
+        body {
+            background: linear-gradient(120deg, #e0f7fa, #b2ebf2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Main container */
+        .container {
+            display: flex;
+            background: #ffffff;
+            width: 600px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 50px;  /* Initially small */
+            height: 100%;
+            background: #00796b;
+            overflow: hidden;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 10px 0 0 10px;
+            transition: width 0.3s ease-in-out;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Expand sidebar on hover */
+        .sidebar:hover {
+            width: 180px;
+        }
+
+        /* Sidebar links */
+        .sidebar a {
+            display: block;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 12px;
+            margin: 5px;
+            background: #004d40;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+            white-space: nowrap; /* Prevents text wrapping */
+            opacity: 0; /* Hide text initially */
+        }
+
+        /* Show text only when sidebar is expanded */
+        .sidebar:hover a {
+            opacity: 1;
+        }
+
+        /* Sidebar link hover */
+        .sidebar a:hover {
+            background: #26a69a;
+            transform: scale(1.05);
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Content area */
+        .content {
+            flex: 1;
+            margin-left: 60px; /* Leaves space for sidebar */
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: justify;
+        }
+
+        /* Heading */
+        .content h1 {
+            color: #004d40;
+            font-size: 24px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        /* Hover effect on heading */
+        .content h1:hover {
+            color: #00796b;
+        }
+
+        /* Paragraph styles */
+        .content p {
+            font-size: 14px;
+            margin: 10px 0;
+            color: #333;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Paragraph hover effect */
+        .content p:hover {
+            transform: translateX(5px);
+        }
+
+        /* Italic text */
+        .content em {
+            color: #00796b;
+            font-style: italic;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <div class="sidebar">
+            <a href="#">Home</a>
+            <a href="#">Musings</a>
+            <a href="#">My Town</a>
+            <a href="#">Links</a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <h1>My First Styled Page</h1>
+            <p>Welcome to my styled page!</p>
+            <p>This page now has a <strong>modern, sleek design</strong> with smooth hover effects and better alignment.</p>
+            <p>There should be more here, but I don’t know what yet.</p>
+            <p><em>Made 16 Feb by myself.</em></p>
+        </div>
+    </div>
+
+</body>
+</html>
