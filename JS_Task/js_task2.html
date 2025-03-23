@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort String Alphabetically</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #eef2f3;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 400px;
+            padding: 25px;
+            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .btn-primary {
+            width: 100%;
+            font-weight: bold;
+            background-color: #007bff;
+            border: none;
+            border-radius: 8px;
+            padding: 12px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .btn-primary:active {
+            background-color: #0056b3;
+            transform: scale(0.98);
+        }
+        input.form-control {
+            border: 2px solid #007bff;
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 1rem;
+            text-align: center;
+        }
+        input.form-control:focus {
+            border-color: #0056b3;
+            box-shadow: 0 0 10px rgba(0, 91, 187, 0.3);
+        }
+        h2 {
+            color: #007bff;
+            font-weight: bold;
+        }
+        h4 {
+            font-size: 1.3rem;
+            color: #333;
+            margin-top: 15px;
+        }
+        #result {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #dc3545;
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            border-radius: 8px;
+            background: #ffe6e6;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Sort String Alphabetically</h2>
+    <div class="mb-3">
+        <label for="stringInput" class="form-label">Enter a String:</label>
+        <input type="text" class="form-control" id="stringInput" placeholder="Enter a string">
+    </div>
+    <button class="btn btn-primary" onclick="sortString()">Sort</button>
+    <h4>Sorted String: <span id="result"></span></h4>
+</div>
+
+<script>
+    function sortString() {
+        let str = document.getElementById("stringInput").value;
+        let resultDisplay = document.getElementById("result");
+        
+        if (str.trim() === "") {
+            resultDisplay.innerText = "";
+            return;
+        }
+        
+        let sortedStr = str.split("").sort().join("");
+        resultDisplay.innerText = sortedStr;
+    }
+</script>
+
+</body>
+</html>

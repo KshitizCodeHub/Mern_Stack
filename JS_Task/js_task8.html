@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            text-align: center;
+            color: #fff;
+        }
+        form {
+            width: 50%;
+            margin: auto;
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            text-align: left;
+            color: #333;
+        }
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .form-group label {
+            width: 180px;
+            font-weight: bold;
+            color: #444;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .error {
+            color: #e74c3c;
+            font-size: 13px;
+            margin-left: 10px;
+        }
+        .register-btn {
+            background-color: #27ae60;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s;
+        }
+        .register-btn:hover {
+            background-color: #218c54;
+        }
+        .radio-group, .checkbox-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .form-group input[type="radio"],
+        .form-group input[type="checkbox"] {
+            width: auto;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 style="color: #f1c40f;">Registration Form</h2>
+    <form onsubmit="return validateForm()">
+        
+        <div class="form-group">
+            <label>First Name:</label>
+            <input type="text" id="fname">
+            <span id="fnameError" class="error"></span>
+        </div>
+
+        <div class="form-group">
+            <label>Last Name:</label>
+            <input type="text" id="lname">
+            <span id="lnameError" class="error"></span>
+        </div>
+
+        <div class="form-group">
+            <label>Email:</label>
+            <input type="email" id="email">
+            <span id="emailError" class="error"></span>
+        </div>
+
+        <div class="form-group">
+            <label>Password:</label>
+            <input type="password" id="password">
+            <span id="passwordError" class="error"></span>
+        </div>
+
+        <div class="form-group">
+            <label>Re-enter Password:</label>
+            <input type="password" id="confirmPassword">
+            <span id="confirmPasswordError" class="error"></span>
+        </div>
+
+        <div class="form-group">
+            <label>Gender:</label>
+            <div class="radio-group">
+                <input type="radio" name="gender" value="male"> Male
+                <input type="radio" name="gender" value="female"> Female
+            </div>
+            <span id="genderError" class="error"></span>
+        </div>
+
+        <div class="form-group">
+            <label>Age:</label>
+            <input type="number" id="age">
+            <span id="ageError" class="error"></span>
+        </div>
+
+        <div class="form-group">
+            <label>Phone Number:</label>
+            <input type="text" id="phone">
+            <span id="phoneError" class="error"></span>
+        </div>
+
+        <div class="form-group">
+            <label>Address:</label>
+            <textarea id="address"></textarea>
+            <span id="addressError" class="error"></span>
+        </div>
+
+        <div class="form-group">
+            <label>State:</label>
+            <input type="text" id="state">
+            <span id="stateError" class="error"></span>
+        </div>
+
+        <div class="form-group">
+            <label>Country:</label>
+            <select id="country">
+                <option value="">Choose your country</option>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="UK">UK</option>
+            </select>
+            <span id="countryError" class="error"></span>
+        </div>
+
+        <div class="form-group">
+            <label>Languages Known:</label>
+            <div class="checkbox-group">
+                <input type="checkbox" name="language" value="English"> English
+                <input type="checkbox" name="language" value="Kannada"> Kannada
+                <input type="checkbox" name="language" value="Hindi"> Hindi
+            </div>
+            <span id="languageError" class="error"></span>
+        </div>
+
+        <div class="form-group">
+            <label>Declaration:</label>
+            <input type="checkbox" id="declaration"> I declare all details are true
+            <span id="declarationError" class="error"></span>
+        </div>
+
+        <br>
+        <button type="submit" class="register-btn">REGISTER</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            let isValid = true;
+            document.querySelectorAll(".error").forEach(el => el.innerHTML = "");
+
+            let fname = document.getElementById("fname").value.trim();
+            if (fname === "") {
+                document.getElementById("fnameError").innerHTML = "This field is required";
+                isValid = false;
+            }
+
+            let lname = document.getElementById("lname").value.trim();
+            if (lname === "") {
+                document.getElementById("lnameError").innerHTML = "This field is required";
+                isValid = false;
+            }
+
+            let email = document.getElementById("email").value;
+            let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (!email.match(emailPattern)) {
+                document.getElementById("emailError").innerHTML = "Enter a valid email";
+                isValid = false;
+            }
+
+            let password = document.getElementById("password").value;
+            if (password.length < 6) {
+                document.getElementById("passwordError").innerHTML = "At least 6 characters";
+                isValid = false;
+            }
+
+            let confirmPassword = document.getElementById("confirmPassword").value;
+            if (confirmPassword !== password) {
+                document.getElementById("confirmPasswordError").innerHTML = "Passwords do not match";
+                isValid = false;
+            }
+
+            if (!document.querySelector('input[name="gender"]:checked')) {
+                document.getElementById("genderError").innerHTML = "Select your gender";
+                isValid = false;
+            }
+
+            let phone = document.getElementById("phone").value;
+            if (!/^\d{10}$/.test(phone)) {
+                document.getElementById("phoneError").innerHTML = "Enter a valid 10-digit phone";
+                isValid = false;
+            }
+
+            if (!document.getElementById("declaration").checked) {
+                document.getElementById("declarationError").innerHTML = "You must agree";
+                isValid = false;
+            }
+
+            return isValid;
+        }
+    </script>
+
+</body>
+</html>

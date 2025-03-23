@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse a Number</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #eef2f3;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+        .card {
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background: #ffffff;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+        .btn-primary {
+            width: 100%;
+            font-weight: bold;
+            background-color: #007bff;
+            border: none;
+            border-radius: 8px;
+            padding: 12px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: scale(1.02);
+        }
+        #result {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #dc3545;
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            border-radius: 8px;
+            background: #fff3f3;
+            min-width: 100px;
+        }
+        input.form-control {
+            border: 2px solid #007bff;
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 1rem;
+            text-align: center;
+        }
+        input.form-control:focus {
+            border-color: #0056b3;
+            box-shadow: 0 0 8px rgba(0, 91, 187, 0.3);
+        }
+        h3 {
+            color: #007bff;
+            font-weight: bold;
+        }
+        p {
+            font-size: 1.1rem;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h3 class="mb-3">Reverse a Number</h3>
+    <div class="mb-3">
+        <input type="number" class="form-control" id="numberInput" placeholder="Enter a number" oninput="reverseNumber()">
+    </div>
+    <button class="btn btn-primary" onclick="reverseNumber()">Reverse</button>
+    <div class="mt-3">
+        <p class="mb-1">Reversed Number:</p>
+        <span id="result">0</span>
+    </div>
+</div>
+
+<script>
+    function reverseNumber() {
+        let inputField = document.getElementById("numberInput");
+        let num = inputField.value.trim();
+        let resultDisplay = document.getElementById("result");
+
+        if (num === "") {
+            resultDisplay.innerText = "0";
+            return;
+        }
+        
+        let reversed = parseInt(num.split("").reverse().join(""));
+        resultDisplay.innerText = reversed;
+    }
+</script>
+
+</body>
+</html>
