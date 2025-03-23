@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Animation</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            position: relative;
+            width: 800px;
+            height: 300px;
+            margin: auto;
+            overflow: hidden;
+            border-bottom: 5px solid black;
+            background-color: white;
+        }
+
+        .train {
+            position: absolute;
+            bottom: 10px;
+            left: -200px;
+            width: 200px;
+        }
+
+        .smoke {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: gray;
+            border-radius: 50%;
+            opacity: 0.8;
+        }
+
+        .controls {
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 10px 15px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .btn-start { background: green; }
+        .btn-stop { background: red; }
+    </style>
+</head>
+<body>
+
+    <h2>Click the buttons to start/stop the animation</h2>
+
+    <div class="container">
+        <img src="https://images.freeimages.com/clg/istock/previews/9846/98462717-outlined-cartoon-train-toy.jpg" 
+             class="train" id="train">
+    </div>
+
+    <div class="controls">
+        <button class="btn btn-start" onclick="startAnimation()">Start</button>
+        <button class="btn btn-stop" onclick="stopAnimation()">Stop</button>
+    </div>
+
+    <script>
+        let train = document.getElementById("train");
+        let trainPos = -200;
+        let smokePuffs = [];
+        let isRunning = false;
+
+        function updateAnimation() {
+            if (!isRunning) return;
+
+            // Move train forward
+            trainPos += 3;
+            if (trainPos > 800) trainPos = -200;
+            train.style.left = trainPos + "px";
+
+            // Create multiple smoke puffs at intervals
+            if (trainPos % 20 === 0) {
+                createSmoke(trainPos + 100, 50);
+            }
+
+            // Move and fade smoke
+            smokePuffs.forEach((smoke, index) => {
+                smoke.y -= 2;  // Move up
+                smoke.x += Math.random() * 2 - 1; // Random drift
+                smoke.opacity -= 0.02; // Fade out
+
+                let el = smoke.element;
+                el.style.left = smoke.x + "px";
+                el.style.top = smoke.y + "px";
+                el.style.opacity = smoke.opacity;
+
+                if (smoke.opacity <= 0) {
+                    el.remove();
+                    smokePuffs.splice(index, 1);
+                }
+            });
+
+            requestAnimationFrame(updateAnimation);
+        }
+
+        function createSmoke(x, y) {
+            for (let i = 0; i < 3; i++) {
+                let smoke = document.createElement("div");
+                smoke.className = "smoke";
+                smoke.style.left = (x + i * 5) + "px";
+                smoke.style.top = (y - i * 5) + "px";
+                document.querySelector(".container").appendChild(smoke);
+                smokePuffs.push({ element: smoke, x: x + i * 5, y: y - i * 5, opacity: 1 });
+            }
+        }
+
+        function startAnimation() {
+            if (!isRunning) {
+                isRunning = true;
+                updateAnimation();
+            }
+        }
+
+        function stopAnimation() {
+            isRunning = false;
+        }
+    </script>
+
+</body>
+</html>
